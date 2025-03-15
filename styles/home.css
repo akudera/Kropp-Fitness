@@ -1,0 +1,238 @@
+@keyframes jump-up {
+    50% {
+        transform: translateY(-5px);
+    };
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 5px;
+    column-gap: 20px;
+    padding-inline: 32px;
+    background-color: var(--dark-blue);
+}
+
+.header__logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 90px;
+}
+
+.header__menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+}
+
+.header__menu-link {
+    font-family: 'Heebo-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--light);
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    height: 90px;
+    display: inline-flex;
+    align-items: center;
+    transition-property: color;
+    transition-duration: var(--transition-duration);
+
+    &:hover {
+        color: var(--light-gray);
+    }
+
+    &.is-current::after {
+        content: '';
+        width: 5px;
+        aspect-ratio: 1;
+        background-color: currentColor;
+        border-radius: 50%;
+        margin-left: 8px;
+    }
+
+    &.is-current:hover::after {
+        animation: jump-up 0.4s;
+    }
+}
+
+.header__actions {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 39px;
+}
+
+.header__book-btn {
+    font-family: 'Heebo-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 2;
+    text-transform: uppercase;
+    color: var(--dark);
+    background-color: var(--light);
+    padding: 7px 26px;
+    white-space: nowrap;
+    transition-property: background-color;
+    transition-duration: var(--transition-duration);
+
+    &:hover {
+        background-color: var(--light-gray);
+    }
+}
+
+.header__burger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    aspect-ratio: 1;
+    border: var(--border);
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-inline: 71px;
+    padding-bottom: 34px;
+    min-height: calc(100vh - 90px);
+    background-color: var(--dark-blue);
+}
+
+.banner__body {
+    color: var(--light);
+    text-transform: uppercase;
+    font-family: 'Heebo-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.banner__info {
+    display: flex;
+    align-items: flex-end;
+    font-size: clamp(16px, 1.56vw, 30px);
+    line-height: 1.27;
+
+    &::before {
+        content: '';
+        background: url(../assets/icons/h1-rev-icon-1.png.svg) no-repeat center / contain;
+        width: clamp(82px, 10.1vw, 194px);
+        aspect-ratio: 1;
+        margin-right: 1em;
+    }
+}
+
+.banner__header {
+    font-size: clamp(60px, 18.75vw, 360px);
+    line-height: 1;
+    overflow: hidden;
+}
+
+.banner__pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.banner__pagination-list {
+    display: flex;
+}
+
+.banner__pagination-item {
+    display: inline-flex;
+    padding: 7px;
+}
+
+.banner__pagination-btn {
+    width: 10px;
+    aspect-ratio: 1;
+    border: var(--border);
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    transition-duration: var(--transition-duration);
+    transition-property: background-color, transform;
+
+    &:not(.is-current):hover {
+        transform: scale(1.2);
+        background-color: var(--dark-gray);
+    }
+
+    &.is-current {
+        background-color: var(--light);
+    }
+}
+
+@media (max-width: 1110px) {
+    .banner {
+        padding-inline: 32px;
+    }
+}
+
+@media (max-width: 908px) {
+    .header {
+        flex-wrap: wrap;
+        padding-block: 16px;
+    }
+
+    .header__logo {
+        height: 40px;
+    }
+
+    .header__menu {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    .header__menu-link {
+        height: 40px;
+    }
+
+    .banner {
+        min-height: calc(100vh - 117px)
+    }
+}
+
+@media (max-width: 642px) {
+    .header__menu-list {
+        column-gap: 25px;
+    }
+
+    .header__book-btn {
+        padding-inline: 18px;
+    }
+
+    .header__actions {
+        column-gap: 18px;
+    }
+
+    .banner {
+        padding-inline: 16px;
+    }
+
+    .banner__info {
+        margin-bottom: 5px;
+    }
+
+    .banner__pagination-btn {
+        width: 8px;
+    }
+
+    .banner__pagination-item {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 422px) {
+    .header {
+        padding-inline: 14px;
+    }
+}
