@@ -9,7 +9,8 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="header__logo">
+        <h1 class="visually-hidden">Kropp Fitness</h1>
+        <div class="header__logo">
             <a href="#" aria-label="Kropp Logo">
                 <img src="./assets/icons/header-logo-kropp.png" 
                 alt="Kropp Logo" 
@@ -19,7 +20,7 @@
                 loading="lazy"
                 />
             </a>
-        </h1>
+        </div>
         <nav class="header__menu">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
@@ -85,6 +86,59 @@
                     </li>
                 </ul>
             </div>
+        </section>
+        <section class="motivation">
+            <h2 class="visually-hidden">Motivation</h2>
+            <ul class="motivation__list">
+                <li class="motivation__item">
+                    <div class="motivation__card container">
+                        <div class="motivation__card-body">
+                            <h3 
+                                class="motivation__card-title medium-title"
+                                data-title="Strong"
+                            >
+                                Be you, just stronger!<br/>
+                                Power is in you
+                            </h3>
+                            <div class="motivation__card-description">
+                                <p>Unum solum justo ex ius. Pro cu probo laboramus eius insolens euripidis te eos, ut agam tota.</p>
+                            </div>
+                            <a href="#" class="motivation__card-link button transparent">View more</a>
+                        </div>
+                        <img 
+                            src="./assets/images/img-1.jpg"
+                            alt="A man pulling himself up" 
+                            class="motivation__card-image"
+                            height="760.16"
+                            width="518"
+                        />
+                    </div>
+                </li>
+                <li class="motivation__item">
+                    <div class="motivation__card container">
+                        <div class="motivation__card-body">
+                            <h3 
+                                class="motivation__card-title backdrop-title medium-title"
+                                data-title="Start"
+                            >
+                                Today is the best<br/>
+                                day to start!
+                            </h3>
+                            <div class="motivation__card-description">
+                                <p>Sed abhorreant constituam consectetuer eu. At mei clita deserunt, his movet molestie nemore.</p>
+                            </div>
+                            <a href="#" class="motivation__card-link button transparent">View more</a>
+                        </div>
+                        <img 
+                            src="./assets/images/img-2.jpg"
+                            alt="A man with dumbbell" 
+                            class="motivation__card-image"
+                            height="760.16"
+                            width="518"
+                        />
+                    </div>
+                </li>
+            </ul>
         </section>
     </main>
 </body>

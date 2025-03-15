@@ -76,14 +76,17 @@
     line-height: 2;
     text-transform: uppercase;
     color: var(--dark);
+    border: var(--border);
     background-color: var(--light);
-    padding: 7px 26px;
+    padding-inline: 26px;
     white-space: nowrap;
-    transition-property: background-color;
+    transition-property: background-color, color;
     transition-duration: var(--transition-duration);
+    
 
     &:hover {
-        background-color: var(--light-gray);
+        background-color: transparent;
+        color: var(--light);
     }
 }
 
@@ -105,7 +108,7 @@
     justify-content: end;
     padding-inline: 71px;
     padding-bottom: 34px;
-    min-height: calc(100vh - 90px);
+    min-height: calc(100svh - 90px);
     background-color: var(--dark-blue);
 }
 
@@ -171,10 +174,120 @@
     }
 }
 
+.motivation__item:nth-child(even) {
+    position: relative;
+    background-color: var(--dark-blue);
+    z-index: 0;
+
+    & .motivation__card {
+        flex-direction: row-reverse;
+    }
+}
+
+.motivation__card {
+    display: flex;
+    align-items: center; 
+    justify-content: start;
+    column-gap: clamp(30px, 10.78vw, 207px);
+}
+
+.motivation__card-title {
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: 14px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: calc(100% + 8px);
+        top: 8px;
+        display: block;
+        width: 26px;
+        aspect-ratio: 1;
+        background: url(../assets/icons/Cross.svg) no-repeat center / contain
+    }
+
+    &::after {
+        content: attr(data-title);
+        position: absolute;
+        z-index: -100;
+        left: -0.62em;
+        top: -0.45em;
+        font-family: var(--font-family-accent);
+        font-size: 2.8em;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--dark-gray);
+    }
+}
+
+.motivation__card-body {
+    padding-left: 35px;
+}
+
+.motivation__card-description {
+    max-width: 390px;
+    font-size: clamp(14px, 1.23vw, 16px);
+
+    &:not(:last-child) {
+        margin-bottom: 37px;
+    }
+}
+
+.button.transparent {
+    position: relative;
+    background-color: transparent;
+    color: var(--light);
+    text-decoration: none;
+    border: var(--border);
+    height: var(--input-height);
+    padding-inline: 31px 81px;
+    white-space: nowrap;
+    transition-duration: var(--transition-duration);
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        display: block;
+        height: 100%;
+        aspect-ratio: 1;
+        background: url(../assets/icons/arrow-right-top.svg) no-repeat center / 60%;
+        transition-duration: var(--transition-duration);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        display: block;
+        height: 100%;
+        aspect-ratio: 1;
+        border: var(--border);
+        border-radius: var(--border-radius);
+    }
+
+    &:hover::after {
+        transform: rotate(45deg);
+    }
+}
+
+.motivation__card-image {
+    position: relative;
+    z-index: 1;
+    margin-block: -25px;
+}
+
 @media (max-width: 1110px) {
     .banner {
         padding-inline: 32px;
     }
+
+    .motivation__card-image {
+        width: 40%;
+    }
+    
 }
 
 @media (max-width: 908px) {
@@ -198,6 +311,12 @@
 
     .banner {
         min-height: calc(100vh - 117px)
+    }
+}
+
+@media (max-width: 682px) {
+    .motivation__card-image {
+        margin: -10px;
     }
 }
 
@@ -228,6 +347,17 @@
 
     .banner__pagination-item {
         padding: 5px;
+    }
+
+    .button.transparent {
+        padding-inline: 21px 71px;
+    }
+    
+    .motivation__card,
+    .motivation__item:nth-child(even) .motivation__card {
+        flex-direction: column-reverse;
+        row-gap: 40px;
+        padding-block: 30px;
     }
 }
 
