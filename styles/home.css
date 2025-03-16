@@ -235,7 +235,7 @@
     }
 }
 
-.button.transparent {
+.button.button--transparent {
     position: relative;
     background-color: transparent;
     color: var(--light);
@@ -244,7 +244,6 @@
     height: var(--input-height);
     padding-inline: 31px 81px;
     white-space: nowrap;
-    transition-duration: var(--transition-duration);
 
     &::after {
         content: '';
@@ -255,6 +254,7 @@
         aspect-ratio: 1;
         background: url(../assets/icons/arrow-right-top.svg) no-repeat center / 60%;
         transition-duration: var(--transition-duration);
+        transition-property: transform;
     }
 
     &::before {
@@ -279,13 +279,75 @@
     margin-block: -25px;
 }
 
+.training-types {
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+.training-types__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px 20px;
+    padding-block: 152px 140px;
+    padding-inline: 86px;
+}
+
+.training-types__item {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.training-types__link {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+    color: var(--light);
+    row-gap: 32px;
+
+    &::after {
+        content: '';
+        clip-path: inset(0 0 0 100%);
+        position: absolute;
+        display: block;
+        width: 81px;
+        aspect-ratio: 1;
+        bottom: 100%;
+        left: 100%;
+        background: url(../assets/icons/Arrow-left-bottom.svg) no-repeat center / contain;
+        transition-duration: 0;
+        transition-property: clip-path;
+    }
+
+    &:hover::after {
+        transition-duration: var(--transition-duration);
+        clip-path: inset(0);
+    }
+}
+
+.training-types__item-title {
+    font-family: 'Heebo-Bold', sans-serif;
+    font-size: clamp(14px, 1.23vw, 16px);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.75;
+    white-space: nowrap;
+}
+
+@media (max-width: 1240px) {
+    .training-types__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 1110px) {
     .banner {
         padding-inline: 32px;
     }
 
     .motivation__card-image {
-        width: 40%;
+        max-width: 40%;
     }
     
 }
@@ -311,6 +373,16 @@
 
     .banner {
         min-height: calc(100vh - 117px)
+    }
+
+    .training-types__list {
+        padding-block: 110px 80px;
+    }
+}
+
+@media (max-width: 808px) {
+    .training-types__list {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -349,7 +421,7 @@
         padding: 5px;
     }
 
-    .button.transparent {
+    .button.button--transparent {
         padding-inline: 21px 71px;
     }
     
@@ -358,6 +430,31 @@
         flex-direction: column-reverse;
         row-gap: 40px;
         padding-block: 30px;
+    }
+
+    .training-types__list {
+        padding-block: 90px 60px;
+        padding-inline: 40px;
+    }
+
+    .training-types__link::after {
+        max-width: 61px;
+        left: 90%;
+    }
+}
+
+@media (max-width: 508px) {
+    .training-types__image {
+        max-width: 70%;
+    }
+
+    .training-types__link::after {
+        max-width: 51px;
+        left: 80%;
+    }
+
+    .training-types__list {
+        padding-block: 70px 50px;
     }
 }
 
