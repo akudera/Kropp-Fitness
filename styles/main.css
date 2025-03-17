@@ -280,7 +280,7 @@ p:not(:last-child) {
 body {
   font-family: var(--font-family-base);
   font-weight: 300;
-  font-size: clamp(12px, 0.83vw, 16px);
+  font-size: clamp(12px, 1.23vw, 16px);
   line-height: 1.75;
   color: var(--light-gray);
   background-color: var(--dark);
@@ -290,6 +290,11 @@ body {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
   padding-inline: var(--container-padding-x);
+}
+
+.container-wide {
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -308,7 +313,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .medium-title {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Heebo-Bold', sans-serif;
   font-size: clamp(20px, 3.08vw, 40px);
-  line-height: 1.3;
 }
