@@ -232,26 +232,28 @@
  }
 
 :root {
-    --light: #FFFFFF;
-    --dark: #000000;
-    --dark-blue: #131619;
-    --dark-gray: #404040;
-    --light-gray: #C4C4C4;
+  --light: #FFFFFF;
+  --dark: #000000;
+  --dark-blue: #131619;
+  --dark-gray: #404040;
+  --light-gray: #C4C4C4;
+  --invalid-red: #dc3232;
 
 
-    --border-radius: 30px;
-    --border: 1px solid var(--light);
-    --accent-border: 1px solid var(--dark);
+  --border-radius: 30px;
+  --border: 1px solid var(--light);
+  --accent-border: 1px solid var(--dark);
+  --border-gray: 1px solid var(--dark-gray);
 
-    --input-height: clamp(38px, 4.15vw, 54px);
+  --input-height: clamp(38px, 4.15vw, 54px);
 
-    --container-width: 1300px;
-    --container-padding-x: 15px;
+  --container-width: 1300px;
+  --container-padding-x: 15px;
 
-    --transition-duration: 0.2s;
+  --transition-duration: 0.2s;
 
-    --font-family-base: 'Heebo-Light', sans-serif;
-    --font-family-accent: 'Yantramanav', sans-serif;
+  --font-family-base: 'Heebo-Light', sans-serif;
+  --font-family-accent: 'Yantramanav', sans-serif;
 }
 
 p:not([class]) {
@@ -276,24 +278,25 @@ p:not(:last-child) {
 }
 
 body {
-    font-family: var(--font-family-base);
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--light-gray);
-    background-color: var(--dark);
+  font-family: var(--font-family-base);
+  font-weight: 300;
+  font-size: clamp(12px, 0.83vw, 16px);
+  line-height: 1.75;
+  color: var(--light-gray);
+  background-color: var(--dark);
 }
 
 .container {
-    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-    margin-inline: auto;
-    padding-inline: var(--container-padding-x);
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--light);
+  font-family: 'Heebo-Bold', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--light);
 }
 
 .button {

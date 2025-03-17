@@ -94,7 +94,7 @@
                     <div class="motivation__card container">
                         <div class="motivation__card-body">
                             <h3 
-                                class="motivation__card-title medium-title"
+                                class="motivation__card-title backdrop-title medium-title"
                                 data-title="Strong"
                             >
                                 Be you, just stronger!<br/>
@@ -228,6 +228,58 @@
                     </a>
                 </li>
             </ul>
+        </section>
+        <section class="join-us">
+            <div class="join-us__video-wrapper">
+                <video 
+                    src="./" 
+                    class="join-us__video"
+                    width="960"
+                    height="600"
+                    poster="./assets/images/join-us-video-poster.jpg"
+                ></video>
+                <button class="join-us_video-play-btn">Play</button>
+            </div>
+            <div class="join-us__body container">
+                <h2 class="join-us__title">Join Us</h2>
+                <form class="join-us__form">
+                    <header class="join-us__form-header">
+                        <h3 
+                            class="join-us__form-header-title backdrop-title backdrop-title--centered "
+                            data-title="Go!"
+                        >
+                            Start here
+                        </h3>
+                        <div class="join-us__form-header-subtitle">Fill the form below to start your journey</div>
+                    </header>
+                    <div class="join-us__form-body">
+                        <label for="username" class="join-us__form-body-label visually-hidden">Name</label>
+                        <input 
+                            type="text" 
+                            class="join-us__form-body-input input" 
+                            placeholder="Name" 
+                            id="username" 
+                            name="username" 
+                            required
+                        />
+                        <label for="email" class="join-us__form-body-label visually-hidden">Email</label>
+                        <input 
+                            type="email" 
+                            class="join-us__form-body-input input" 
+                            placeholder="Email" 
+                            id="email" 
+                            name="email" 
+                            required
+                        />
+                        <button 
+                            class="join-us__form-body-submit-btn button button--transparent" 
+                            type="submit"
+                        >
+                        Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 </body>
