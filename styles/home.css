@@ -7,6 +7,11 @@
     }
 }
 
+@keyframes scroll  {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 13px)); }
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -429,11 +434,6 @@
     }
 }
 
-.join-us__form-header-title {
-    position: relative;
-    font-size: clamp(30px, 4.62vw, 60px);
-}
-
 .backdrop-title.backdrop-title--centered {
     &::before {
         width: 0.43em;
@@ -448,14 +448,6 @@
         font-size: 3em;
     }
     
-}
-
-.join-us__form-header-subtitle {
-    color: var(--light);
-    font-size: clamp(14px, 1.54vw, 20px);
-    line-height: 1.65;
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .join-us__form-body {
@@ -522,6 +514,45 @@
     }
 }
 
+.fit-family {
+    position: relative;
+    background-color: var(--dark-blue);
+    z-index: 0;
+}
+
+.fit-family__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 7px;
+    padding-block: 132px 98px;
+}
+
+.fit-family__body {
+    overflow-x: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.fit-family__list {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+    column-gap: 26px;
+    will-change: transform;
+
+    &:active {
+        animation-play-state: paused;
+    }
+}
+
+.fit-family__slider-slide {
+    object-fit: cover;
+    height: clamp(360px, 48.98vw, 480px);
+    width: auto;
+}
+
 @media (max-width: 1240px) {
     .training-types__list {
         grid-template-columns: repeat(3, 1fr);
@@ -582,6 +613,15 @@
 @media (max-width: 808px) {
     .training-types__list {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fit-family__list {
+        column-gap: 18px;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(calc(-50% - 9px)); }
     }
 }
 
@@ -673,10 +713,18 @@
     .training-types__list {
         padding-block: 70px 50px;
     }
+
+    .fit-family__header-title {
+        max-width: 260px;
+    }
 }
 
 @media (max-width: 422px) {
     .header {
         padding-inline: 14px;
+    }
+
+    .fit-family__slider-slide {
+        height: 260px;
     }
 }

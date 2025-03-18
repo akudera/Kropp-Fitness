@@ -316,3 +316,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Heebo-Bold', sans-serif;
   font-size: clamp(20px, 3.08vw, 40px);
 }
+
+.title {
+  font-size: clamp(30px, 4.62vw, 60px);
+}
+
+.section-subtitle {
+  color: var(--light);
+  font-size: clamp(14px, 1.54vw, 20px);
+  line-height: 1.65;
+  text-transform: uppercase;
+  text-align: center;
+}
