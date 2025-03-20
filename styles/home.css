@@ -262,7 +262,8 @@
         display: block;
         height: 100%;
         aspect-ratio: 1;
-        background: url(../assets/icons/arrow-thin.svg) no-repeat center / 60%;
+        background: url(../assets/icons/arrow-thin.svg) no-repeat center / 40%;
+        rotate: -135deg;
         transition-duration: var(--transition-duration);
         transition-property: transform;
     }
@@ -384,6 +385,7 @@
         width: 26px;
         aspect-ratio: 1;
         background: url(../assets/icons/arrow-thin.svg) no-repeat center / contain;
+        rotate: -135deg;
         transition-duration: var(--transition-duration);
         transition-property: filter;
     }
@@ -660,6 +662,151 @@ select.input:invalid {
     }
 }
 
+.footer__main {
+    padding-block: 141px 157px;
+}
+
+.footer__header {
+    display: flex;
+    align-items: center;
+    gap: 15px clamp(30px, 4.77vw, 62px);
+    
+    &:not(:last-child) {
+        margin-bottom: 60px;
+    }
+}
+
+.footer__logo {
+    flex-shrink: 0;
+}
+
+.footer__header-description {
+    text-align: left;
+
+    & a {
+        color: currentColor;
+    }
+}
+
+.footer__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 20px;
+}
+
+.footer__body-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    color: var(--light)
+}
+
+.footer__body-description {
+    max-width: 256px;
+}
+
+.footer__body-address:not(:last-child) {
+    margin-bottom: 35px;
+}
+
+.footer__body-contacts-list a {
+    color: currentColor
+}
+
+.footer__body-title {
+    font-size: clamp(16px, 1.69vw, 22px);
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &.title-filled-arrow {
+        &::after {
+            rotate: 90deg;
+            margin-left: 0.5em;
+        }
+    }
+}
+
+.footer__body-schedule:not(:last-child) {
+    margin-bottom: 13px;
+}
+
+.footer__subscribe {
+    position: relative;
+    
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+.footer__subscribe-input {
+    padding-right: 70px;
+
+    &:user-invalid + .footer__subscribe-button {
+        border-color: var(--invalid-red);
+    }
+}
+
+.footer__subscribe-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: var(--border-dark-gray);
+    border-radius: var(--border-radius);
+    padding: 0;
+
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        aspect-ratio: 1;
+        background: url(../assets/icons/arrow-thin.svg) no-repeat center / 40%;
+        rotate: -135deg;
+        transition-duration: var(--transition-duration);
+        transition-property: rotate;
+    }
+
+    &:hover {
+        &::after {
+            rotate: -90deg;
+        }
+    }
+}
+
+.footer__socials-list {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    column-gap: 4px;
+}
+
+
+.footer-socials-link {
+    display: inline-block;
+    width: calc(23px + 7px * 2);
+    padding: 7px;
+}
+
+.footer__extra {
+    background-color: var(--dark-blue);
+}
+
+.footer__extra-inner {
+    padding-block: 16px 15px;
+}
+
+.footer__extra-copyright {
+    color: var(--light);
+    font-size: clamp(10px, 1.07vw, 14px);
+
+    & a {
+        color: currentColor;
+    }
+}
+
 @media (max-width: 1240px) {
     .training-types__list {
         grid-template-columns: repeat(3, 1fr);
@@ -690,6 +837,10 @@ select.input:invalid {
 
     .calculate__inner {
         flex-direction: column;
+    }
+
+    .footer__subscribe:not(:last-child) {
+        margin-bottom: 20px;
     }
 }
 
@@ -747,6 +898,18 @@ select.input:invalid {
 
     .calculate__inner {
         overflow-x: hidden;
+    }
+
+    .footer__body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__logo {
+        max-width: 210px
+    }
+
+    .footer__body-address:not(:last-child) {
+        margin-bottom: 25px;
     }
 }
 
@@ -817,6 +980,19 @@ select.input:invalid {
     .join-us__form-body-submit-btn {
         width: 200px;
     }
+
+    .footer__main {
+        padding-block: 100px 80px;
+    }
+
+    .footer__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__subscribe-input.input {
+        padding-right: 50px;
+    }
 }
 
 @media (max-width: 508px) {
@@ -844,6 +1020,18 @@ select.input:invalid {
         &::before {
             width: 540px;
         }
+    }
+
+    .footer__socials-list {
+        grid-template-columns: repeat(3, 40px);
+    }
+
+    .footer__logo {
+        max-width: 180px
+    }
+
+    .footer__extra-inner {
+        padding-block: 10px;
     }
 }
 
