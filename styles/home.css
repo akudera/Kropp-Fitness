@@ -930,7 +930,7 @@ select.input:invalid {
     }
 
     .banner {
-        min-height: calc(100vh - 117px)
+        min-height: calc(100svh - 117px)
     }
 
     .training-types__list {
